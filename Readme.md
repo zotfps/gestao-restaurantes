@@ -30,7 +30,9 @@ Permite ativar ou desativar um restaurante já cadastrado.
 - Quando o restaurante está ativado, ele aparece como disponível no sistema.
 - Quando está desativado, ele permanece cadastrado, mas é marcado como inativo.
 
-![Status dos Restaurantes](imagens/staus.png)
+![Status dos Restaurantes](imagens/status.png)
+
+---
 
 ## ⚙️ Funcionalidades
 
@@ -55,4 +57,4 @@ Finaliza o programa de forma segura.
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/zotfps/sistema-restaurantes.git
+   git clone https://github.com/zotfps/gestao-restaurantes.git
