@@ -1,3 +1,5 @@
+from cadastro.cadastro import cadastrar_restaurante, carregar_dados
+from cadastro.listar import lista_mostrar
 import os
 
 restaurantes = []
@@ -64,39 +66,10 @@ def alternar_estado_restaurante():
     print(f"Restaurante {nome_restaurante} não encontrado.")
     retornar_menu()
 
-def cadastrar_restaurante():
-    """Cadastra um novo restaurante, solicitando nome e categoria, e adiciona-o à lista global."""
-    mostrar_titulo("Cadastrar Restaurante")
-    nome_restaurante = input("Nome do Restaurante: ")
-    if nome_restaurante.strip() == "" or nome_restaurante.isnumeric():
-        print("Nome inválido.")
-        return retornar_menu()
-    categoria = input("Categoria do Restaurante: ")
-    if categoria.strip() == "" or categoria.isnumeric():
-        print("Categoria inválida.")
-        return retornar_menu()
-    novo_restaurante = {
-        'nome': nome_restaurante,
-        'categoria': categoria,
-        'ativo': False
-    }
-    restaurantes.append(novo_restaurante)
-    print(f"Restaurante {nome_restaurante} foi cadastrado com sucesso!")
-    retornar_menu()
-
 def opcao_invalida():
     """Informa ao usuário que a opção escolhida é inválida e retorna ao menu principal."""
     input("Opção inválida. Digite uma tecla para continuar...")
     retornar_menu()
-
-def lista_mostrar():
-    """Mostra todos os restaurantes cadastrados formatados em colunas."""
-    print(f'{"Nome do restaurante".ljust(27)} | {"Categoria".ljust(20)} | Status\n')
-    for restaurante in restaurantes:
-        nome_restaurante = restaurante['nome']
-        categoria = restaurante['categoria']
-        ativo = 'ativado' if restaurante['ativo'] else 'desativado'
-        print(f"- {nome_restaurante.ljust(25)} | {categoria.ljust(20)} | {ativo}")
 
 def listar_restaurantes():
     """Exibe todos os restaurantes cadastrados com suas respectivas categorias e status."""
